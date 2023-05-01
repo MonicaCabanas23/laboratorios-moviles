@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Laboratorio 05 cabanas</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="billboard_title">Billboard</string>
+    <string name="movie_name">Star Wars episodio 3: La venganza de los Sith</string>
+    <string name="movie_title">Star Wars episodio 3: La venganza de los Sith</string>
+    <string name="name_label">Name</string>
+    <string name="category_field">Category</string>
+    <string name="movie_title_card_view">StarWars episodio 3: La venganza de los Sith</string>
+    <string name="movie_description">La trama describe una época en la que los Caballeros Jedi se han esparcido por toda la galaxia, dirigiendo un ejército clon masivo para enfrentar a los Separatistas Galácticos, tres años después del inicio de las Guerras Clon. El Canciller Palpatine fue secuestrado y el Maestro Jedi Obi-Wan Kenobi, acompañado de su aprendiz Anakin Skywalker, es enviado a rescatarlo en una misión, donde también debe eliminar a los Líderes Separatistas, el Conde Dooku y el General Grievous, para concluir el conflicto galáctico. Después de ser rescatado, el Canciller fortalece su amistad con Anakin, para poder convencerlo de que existen mayores beneficios en el Lado Oscuro de la Fuerza, que del Lado Luminoso.</string>
+    <string name="decription_field">Decription</string>
+    <string name="calification_field">Calification</string>
+</resources>

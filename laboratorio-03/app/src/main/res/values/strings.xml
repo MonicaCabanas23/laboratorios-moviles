@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">laboratorio-03-cabañas</string>
+    <string name="fiveCents">$0.05</string>
+    <string name="tenCents">$0.10</string>
+    <string name="quarter">$0.25</string>
+    <string name="oneDollar">$1.00</string>
+    <string name="zero">$0.00</string>
+    <string name="title">CANTIDAD DE DINERO</string>
+</resources>

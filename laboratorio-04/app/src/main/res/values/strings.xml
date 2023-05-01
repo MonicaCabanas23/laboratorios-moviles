@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">laboratorio 04 cabanas</string>
+    <string name="first_title">Rellena la siguiente información</string>
+    <string name="email_hint">Correo electrónico</string>
+    <string name="name_ehint">Nombre</string>
+    <string name="number_hint">Número de teléfono</string>
+    <string name="share">COMPARTIR</string>
+    <string name="save">GUARDAR</string>
+</resources>
