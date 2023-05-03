@@ -1,6 +1,8 @@
 package com.example.laboratorio05cabanas.ui.movie
 
+import android.graphics.Movie
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,41 +11,56 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.laboratorio05cabanas.R
 import com.example.laboratorio05cabanas.data.models.MovieModel
-import com.example.laboratorio05cabanas.databinding.ActivityMainBinding
 import com.example.laboratorio05cabanas.databinding.FragmentCreateMovieBinding
 
 class CreateMovieFragment : Fragment() {
 
-    private lateinit var binding: FragmentCreateMovieBinding
     private val viewModel: MovieViewModel by activityViewModels {
         MovieViewModel.Factory
     }
 
+    private lateinit var binding: FragmentCreateMovieBinding
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
+        savedInstanceState: Bundle?): View {
+
         binding = FragmentCreateMovieBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.submitButton.setOnClickListener{
-            createMovie()
-        }
+
+        setViewModel()
+        setObserver()
     }
 
-    private fun createMovie() {
-        val newMovie = MovieModel(
-            binding.nameValue.text.toString(),
-            binding.categoryValue.text.toString(),
-            binding.descriptionValue.text.toString(),
-            binding.calificationValue.text.toString(),
-        )
+    private fun setViewModel() {
+        // variable de la vista se le asigna el viewModel
+        binding.viewmodel = viewModel
+    }
 
-        viewModel.addMovie(newMovie)
+    private fun setObserver() {
+        // Este es el mismo status definido en el ViewModel
+        // con ViewLifeCycleOwner se observa el fragmento durante su ciclo de vida
+        viewModel.status.observe(viewLifecycleOwner) { status ->
+            when {
+                status.equals(MovieViewModel.MOVIE_CREATED) -> {
+                    Log.d("APP TAG", status)
+                    Log.d("APP TAG", viewModel.getMovies().toString())
 
-        findNavController().popBackStack()
+                    // Nos evitamos un búcle infinito con esto
+                    viewModel.clearStatus()
+                    viewModel.clearData()
+
+                    findNavController().popBackStack()
+                }
+                status.equals(MovieViewModel.WRONG_DATA) -> {
+                    Log.d("APP TAG", status)
+                    viewModel.clearStatus()
+                }
+            }
+        }
     }
 }

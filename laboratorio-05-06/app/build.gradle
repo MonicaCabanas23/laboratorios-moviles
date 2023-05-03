@@ -30,7 +30,8 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    viewBinding {
+    // Ya incluye ViewBinding
+    dataBinding {
         enabled = true
     }
 }
