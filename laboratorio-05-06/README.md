@@ -17,3 +17,20 @@ Consiste en una capa que actúa como intermediario entre la fuente de datos y la
 
 ### ¿Qué es el ViewModel?
 Es el intermediario entre los modelos y las vistas
+
+# Laboratorio 07
+### ¿Qué ventajas tiene el utilizar LiveData?
+- Garantiza la congruencia entre la UI y los datos.
+- Evita fugas de memoria al eliminar los objetos que ya no se utilizan cuando el ciclo de vida de un fragmento o componente termina
+- Detiene actividades para evitar fallas.
+- No se realiza más el control manual de los ciclos de vida.
+- Los datos siempre están actualizados. 
+
+### ¿Qué patrón de diseño utiliza LiveData?
+Model View ViewModel
+
+### Menciona que se debe agregar al Gradle para poder implementar DataBinding
+Habilitar en el buildTypes el dataBinding.
+
+### ¿Qué es DataBinding? Menciona sus ventajas frente a findViewById
+  
