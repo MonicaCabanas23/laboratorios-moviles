@@ -20,11 +20,19 @@ class MovieViewModel(private val repository: MovieRepository): ViewModel() {
     var qualification = MutableLiveData("")
     var status = MutableLiveData("")
 
-
+    // CRUD
     fun getMovies() = repository.getMovies()
     fun addMovie(movie: MovieModel) = repository.addMovie(movie)
 
-    // Validar variables
+    // Cuando el usuario le da click a una tarjeta en el RecylcerView del fragmento de Billboard
+    fun setSelectedMovie(movie: MovieModel) {
+        name.value = movie.name
+        category.value = movie.category
+        description.value = movie.description
+        qualification.value = movie.calification
+    }
+
+    // Validar variables en el fragmento de CreateMovie
     private fun validateData(): Boolean {
         when {
             name.value.isNullOrEmpty() -> return false
