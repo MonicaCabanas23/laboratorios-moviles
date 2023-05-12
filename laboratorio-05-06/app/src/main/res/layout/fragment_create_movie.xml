@@ -75,6 +75,7 @@
                 android:text="@={viewmodel.category}"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/textColor"
                 android:textColorHint="@color/textColor" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -97,7 +98,8 @@
                 android:id="@+id/description_value"
                 android:text="@={viewmodel.description}"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:textColor="@color/textColor"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -119,7 +121,8 @@
                 android:id="@+id/calification_value"
                 android:text="@={viewmodel.qualification}"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:textColor="@color/textColor"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 

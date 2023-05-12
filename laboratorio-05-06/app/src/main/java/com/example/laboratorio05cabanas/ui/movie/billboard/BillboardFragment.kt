@@ -37,6 +37,7 @@ class BillboardFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        viewModel.clearData()
         setRecyclerView(view)
 
         // Agregar película por medio del botón flotante
@@ -49,6 +50,7 @@ class BillboardFragment : Fragment() {
     private fun setRecyclerView(view: View) {
         binding.movieBillboardRecyclerView.layoutManager = LinearLayoutManager(view.context)
 
+        // Se crea el objeto de adapter con función anónima como parámetro 'showSelectedMovie()'
         adapter = MovieRecyclerViewAdapter { selectedMovie ->
             showSelectedMovie(selectedMovie)
         }

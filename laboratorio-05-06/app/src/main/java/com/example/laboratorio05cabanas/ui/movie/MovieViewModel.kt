@@ -24,7 +24,7 @@ class MovieViewModel(private val repository: MovieRepository): ViewModel() {
     fun getMovies() = repository.getMovies()
     fun addMovie(movie: MovieModel) = repository.addMovie(movie)
 
-    // Cuando el usuario le da click a una tarjeta en el RecylcerView del fragmento de Billboard
+    // Cuando el usuario le da click a una tarjeta en el RecyclerView del fragmento de Billboard
     fun setSelectedMovie(movie: MovieModel) {
         name.value = movie.name
         category.value = movie.category
