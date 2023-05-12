@@ -32,5 +32,11 @@ Model View ViewModel
 ### Menciona que se debe agregar al Gradle para poder implementar DataBinding
 Habilitar en el buildTypes el dataBinding.
 
-### ¿Qué es DataBinding? Menciona sus ventajas frente a findViewById
-  
+# Laboratorio 08
+### ¿Cuál es la principal ventaja de utilizar RecyclerView?
+Permite que se puedan reutilizar elementos visuales en una lista para cargarlos eficientemente al hacer scroll.
+
+### Menciona los componentes de RecyclerView y la función que tiene cada uno de ellos
+- RecyclerViewHolder: es el encargado de crear el elemento visual que se utilizará en la lista. Corresponde a un elemento de la lista
+- RecyclerViewAdapter: es el encargado de enlazar los datos del ViewModel a la vista o widget creada anteriormente.
+- List Item: es el archivo .xml como tal que establece cómo se verá un elemento de la lista en el Recycler View
