@@ -1,5 +1,6 @@
 package com.example.laboratorio05.ui.casting.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.Companion.APPLICATION_KEY
@@ -8,6 +9,7 @@ import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.laboratorio05.MovieReviewerApplication
 import com.example.laboratorio05.data.model.ActorModel
+import com.example.laboratorio05.data.model.CastModel
 import com.example.laboratorio05.data.model.MovieModel
 import com.example.laboratorio05.repositories.CastRepository
 import kotlinx.coroutines.launch
@@ -21,11 +23,6 @@ class CastingViewModel(private val repository: CastRepository): ViewModel() {
         movieId.value = movie.movieId.toString()
     }
 
-    // TODO: delete this function
-    fun createCasting() {}
-
-    // TODO: uncomment
-    /*
     fun selectActor(actor: ActorModel) {
         actorId.value = actor.actorId.toString()
     }
@@ -47,12 +44,15 @@ class CastingViewModel(private val repository: CastRepository): ViewModel() {
             actorId = actorId.value?.toInt()!!,
         )
 
+        Log.d("APP_TAG", movieId.value.toString())
+        Log.d("APP_TAG", actorId.value.toString())
+        Log.d("APP_TAG", CAST_CREATED)
+
         addCasting(casting)
         clearData()
 
         status.value = CAST_CREATED
     }
-     */
 
     private fun validateData(): Boolean {
         when {
